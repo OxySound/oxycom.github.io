@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started-pi-linux" class="md-skip">
+        <a href="#getting-started-pilinux" class="md-skip">
           Skip to content
         </a>
       
@@ -247,9 +247,42 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Pi/Linux
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Pi/Linux" class="md-nav__link md-nav__link--active">
       Pi/Linux
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -408,6 +441,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -422,145 +472,14 @@
                   
                 
                 
-                <h1 id="getting-started-pi-linux">Getting Started - Pi / Linux<a class="headerlink" href="#getting-started-pi-linux" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>#include &lt;unistd.h&gt;
-#include &lt;cstdlib&gt;
-#include &lt;new&gt;
-#include &lt;signal.h&gt;
-
-#include &lt;alsa/asoundlib.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt;
-
-#include &quot;NE10.h&quot;
-
-#include &quot;OxyCoreLib_api.h&quot;
-#include &quot;OxyCorepa.h&quot;
-
-using namespace std;
-
-#define GETCH getchar
-
-#define SAMPLE_RATE 44100
-#define BUFFER_SIZE  2048
-
-#define PA_CHECKERROR(x) assert( (x) == paNoError);
-
-void* mCore;
-
-char mDecodedString[30];
-
-char* subString(char *s, int index, int n){
-    char *res = new char[n + 1];
-    memcpy(res, s + index, n); res[n] = 0;
-    return res;
-}
-
-
-/* Callback float data to be processed */
-static int callback(const void* input,
-                    void* output,
-                    unsigned long framesPerBuffer,
-                    const PaStreamCallbackTimeInfo* time_info,
-                    PaStreamCallbackFlags flags,
-                    void* userData)
-{
-
-    float* in = (float*)input;
-    float* out = (float*)output; // in practice we will only ever have 1 buffer, since audio format is mono
-
-         int pdata = OXY_DecodeAudioBuffer(in, framesPerBuffer, mCore);
-
-         if (pdata == -3)
-         {
-
-        int sizeStringDecoded = OXY_GetDecodedData(mDecodedString, mCore);
-
-        float h = OXY_GetReceivedOxysVolume(mCore); // Get average received volume of last audio transmission in DB
-
-        char* output = subString(mDecodedString, 0, 5);
-
-             if (sizeStringDecoded &gt; 0)
-             {
-               cout &lt;&lt; GREEN &lt;&lt; output &lt;&lt; RESET &lt;&lt; endl &lt;&lt; endl;
-
-             }else{
-                 // &lt;0
-                 cout &lt;&lt; RED &lt;&lt; &quot;Decode string seems bad&quot; &lt;&lt; RESET &lt;&lt; endl &lt;&lt; endl;
-             }
-
-        //Free memory to avoid memory leaks
-        delete[] output;
-
-         }
-         else
-         {
-             //no data found in this buffer
-         }
-    return 0;
-}
-  }
-
-int main(int argc, const char * argv[])
-{
-
-  using std::cout;
-  using std::endl;
-
-   /* 2= AUDIBLE
-      3= INAUDIBLE
-      4= HIDDEN
-      6= CUSTOM
-   */
-
-    int mode = 3;
-
-    PaStream *stream;
-    PaError err;
-
-    /* Initialize lib */
-    mCore = OXY_Create();
-
-
-    OXY_Configure(mode, SAMPLE_RATE, BUFFER_SIZE, mCore);
-
-    /* Init audio hardware setup */
-    err = Pa_Initialize();
-    PA_CHECKERROR(err);
-
-    /* Use default audio device with one input and output but not needed */
-    err = Pa_OpenDefaultStream(&amp;stream
-                               ,1
-                               ,1
-                               ,paFloat32
-                               ,SAMPLE_RATE
-                               ,2048
-                               ,callback
-                               ,NULL);
-    PA_CHECKERROR(err);
-
-
-    err = Pa_StartStream(stream);
-    PA_CHECKERROR(err);
-
-    /* Run until user provides enter on keyboard */
-    //GETCH();
-
-    /* Stop Portaudio wrapper */
-    //err = Pa_StopStream(stream);
-    //PA_CHECKERROR(err);
-
-    /* Clean up Portaudio wrapper */
-    //err = Pa_CloseStream(stream);
-    //PA_CHECKERROR(err);
-
-    err = Pa_Terminate();
-    PA_CHECKERROR(err);
-
-    return 0;
-}
-</code></pre></div>
+                <h1 id="getting-started-pilinux">Getting Started - PI/Linux<a class="headerlink" href="#getting-started-pilinux" title="Permanent link">&para;</a></h1>
+<p><a href="/assets/images/deck/pi.jpg"><img alt="Audio" src="/assets/images/deck/pi.jpg" /></a></p>
+<p>The OxySound SDK for Arm Cortex processors allows you to send and receive data-over-sound from within your embedded C/C++ application for encoding and decoding of OxySound signals.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>To build an embedded system that uses the OxySound Pi SDK, you will need the following components.</p>
+<p>Arm Cortex-A72 architecture variant CPU
+For input, a microphone. We recommend the ReSpeaker 2 mics Hat.
+For output, a loudspeaker.</p>
                 
               
               
