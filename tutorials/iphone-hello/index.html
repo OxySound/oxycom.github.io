@@ -430,7 +430,7 @@ import AVFoundation
 /**
 - Note: OxySound Framework Example
 
-Base class for all application UIViewController classes which include SonicAuth functionalities. This class contains common delegate, methods and constants that are used in all application controllers
+ This class contains common delegate, methods and constants that are used in all application controllers
 
 The constructor`OxyManager` contains all the controls of the OxySound SDK
 
@@ -440,12 +440,11 @@ let OxyManager = Oxy.instance()
 oxyManager?.delegate=self
 oxyManager!.listen()</p>
 <ul>
-<li>Note: The method <code>OxyManager.delegate = self()</code> sets the callback for <code>OK</code>decodes</li>
 <li>
-<p>The mehtod <code>OxyManager.instance()</code> initialize the SDK.</p>
+<p>Note: The method <code>OxyManager.delegate = self()</code> sets the callback for <code>OK</code>decodes</p>
 </li>
 <li>
-<p>Note: Listen defaults to All mode</p>
+<p>The mehtod <code>OxyManager.instance()</code> initialize the SDK.</p>
 </li>
 <li>The method <code>OxyManager.listen()</code> starts the SDK into listening mode the default</li>
 <li>The method <code>OxyManager.stop()</code> starts the SDK into listening mode the default
