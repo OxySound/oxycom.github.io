@@ -1,0 +1,979 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OxySound - Official documentation.">
+      
+      
+        <link rel="canonical" href="https://oxycom.co.uk/components/c/">
+      
+      
+        <meta name="author" content="OxySound">
+      
+      <link rel="shortcut icon" href="/assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>C/C++ - OxySound Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#000000">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="/assets/stylesheets/os.css">
+    
+      <link rel="stylesheet" href="/assets/fonts/os/graphik/graphik.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started-c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://oxycom.co.uk/" title="OxySound Documentation" class="md-header-nav__button md-logo" aria-label="OxySound Documentation">
+      
+  <img src="/assets/images/brand.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            OxySound Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              C/C++
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://oxycom.co.uk/" title="OxySound Documentation" class="md-nav__button md-logo" aria-label="OxySound Documentation">
+      
+  <img src="/assets/images/brand.png" alt="logo">
+
+    </a>
+    OxySound Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Start building
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Start building" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Start building
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-iphone/" title="iPhone" class="md-nav__link">
+      iPhone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-android/" title="Android" class="md-nav__link">
+      Android
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-linux/" title="Pi/Linux" class="md-nav__link">
+      Pi/Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        C/C++
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="C/C++" class="md-nav__link md-nav__link--active">
+      C/C++
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-object-and-destory" class="md-nav__link">
+    Create Object and Destory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-profile" class="md-nav__link">
+    Configure Profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-audio-output" class="md-nav__link">
+    Custom Audio Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encode-data" class="md-nav__link">
+    Encode Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoded-audio-buffer" class="md-nav__link">
+    Encoded Audio Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-audio-buffer" class="md-nav__link">
+    Read Audio Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decode-audio" class="md-nav__link">
+    Decode Audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-decoded-data" class="md-nav__link">
+    Get Decoded Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-confidence" class="md-nav__link">
+    Get Confidence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-received" class="md-nav__link">
+    Get Received
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-decode-mode" class="md-nav__link">
+    Get Decode Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-frequency" class="md-nav__link">
+    Base Frequency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-range" class="md-nav__link">
+    Frequency Range
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-mac/" title="MacOS" class="md-nav__link">
+      MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-wasm/" title="WebAssembly" class="md-nav__link">
+      WebAssembly
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sdk-arm/" title="Ardunio" class="md-nav__link">
+      Ardunio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../unity/" title="Unity Plugin" class="md-nav__link">
+      Unity Plugin
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../1.md" title="Use Cases" class="md-nav__link">
+      Use Cases
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      API
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="API" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../k.md" title="Generate Tones" class="md-nav__link">
+      Generate Tones
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Profiles
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Profiles" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Profiles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Ultrasonic.md" title="Ultrasonic" class="md-nav__link">
+      Ultrasonic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Audible.md" title="Audible" class="md-nav__link">
+      Audible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Customization.md" title="Customization" class="md-nav__link">
+      Customization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Compression.md" title="Compression" class="md-nav__link">
+      Compression
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Examples
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Examples" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/iphone-hello/" title="iPhone App" class="md-nav__link">
+      iPhone App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/android-hello/" title="Android App" class="md-nav__link">
+      Android App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Samples
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Samples" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Samples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-object-and-destory" class="md-nav__link">
+    Create Object and Destory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-profile" class="md-nav__link">
+    Configure Profile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-audio-output" class="md-nav__link">
+    Custom Audio Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encode-data" class="md-nav__link">
+    Encode Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoded-audio-buffer" class="md-nav__link">
+    Encoded Audio Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-audio-buffer" class="md-nav__link">
+    Read Audio Buffer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decode-audio" class="md-nav__link">
+    Decode Audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-decoded-data" class="md-nav__link">
+    Get Decoded Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-confidence" class="md-nav__link">
+    Get Confidence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-received" class="md-nav__link">
+    Get Received
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-decode-mode" class="md-nav__link">
+    Get Decode Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-frequency" class="md-nav__link">
+    Base Frequency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequency-range" class="md-nav__link">
+    Frequency Range
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="getting-started-c">Getting Started - C++<a class="headerlink" href="#getting-started-c" title="Permanent link">&para;</a></h1>
+<h2 id="create-object-and-destory">Create Object and Destory<a class="headerlink" href="#create-object-and-destory" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>  void *OXY_Create();
+  void OXY_Destroy(void *oxyingObject);
+</code></pre></div>
+
+<h2 id="configure-profile">Configure Profile<a class="headerlink" href="#configure-profile" title="Permanent link">&para;</a></h2>
+<p>Configure function, call this function to configure parameters of the Oxy Core Library mode</p>
+<div class="highlight"><pre><span></span><code>  Parameters:
+     mode (2 for audible, 3 for non-audible)
+     samplingRate: sampling rate in Hz
+     nChannels: number of channels of the input audio
+     Object: OXY object instance, created in OXY_Create()
+     Returns: 0=ok, &lt;0=fail
+
+  Configure(int mode, float samplingRate, int32_t bufferSize, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="custom-audio-output">Custom Audio Output<a class="headerlink" href="#custom-audio-output" title="Permanent link">&para;</a></h2>
+<p>Create custom audio, call this function to set a personalized audio that will be played
+ simultaneously during oxying playback on top of non-audible, audible or compression modes</p>
+<div class="highlight"><pre><span></span><code> Parameters:
+       samplesSize: number of samples in samples buffer (maximum size is 2 seconds= 44100*2)
+       samples: array with samples (44Khz, 16bits, mono)
+       oxyingObject: OXY object instance, created in OXY_Create()
+       Returns: 0=ok, &lt;0=fail
+
+   SetAudioSignature(int32_t samplesSize, const float *samplesBuffer, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="encode-data">Encode Data<a class="headerlink" href="#encode-data" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>  Parameters:
+
+      stringToEncode: string containing the characters to encode
+      size: number of characters in string characters to encode
+      type: 0 for encoding only tones, 1 for encoding tones + R2D2 sounds, 2 for encoding melody
+      melodyString: string containing characters to synthesize melody over the tones (null if type parameter is 0 or 1)
+      melodySize: size of melody in number of notes (0 if type parameter is 0 or 1)
+      oxyingObject: OXY object instance, created in OXY_Create()
+      Returns: number of samples in encoded audio buffer
+
+EncodeDataToAudioBuffer(const char *stringToEncode, int32_t size, int32_t type, const char *melodyString, int32_t melodySize, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="encoded-audio-buffer">Encoded Audio Buffer<a class="headerlink" href="#encoded-audio-buffer" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>   GetEncodedAudioBuffer function
+
+  Parameters:
+      audioBuffer: float array of bufferSize size to fill with encoded audio data
+      oxyingObject: OXY object instance, created in OXY_Create()
+
+  GetEncodedAudioBuffer(float *audioBuffer, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="read-audio-buffer">Read Audio Buffer<a class="headerlink" href="#read-audio-buffer" title="Permanent link">&para;</a></h2>
+<p>CreateAudioBufferFromData function, resets the read index on the internal buffer that has the encoded string</p>
+<div class="highlight"><pre><span></span><code>   Parameters:
+      oxyingObject: OXY object instance, created in OXY_Create()  
+      Returns: 0=ok, &lt;0=fail
+
+   ResetEncodedAudioBuffer(void *oxyingObject);
+</code></pre></div>
+
+<h2 id="decode-audio">Decode Audio<a class="headerlink" href="#decode-audio" title="Permanent link">&para;</a></h2>
+<p>DecodeAudioBuffer function, receives an audiobuffer of specified size and outputs if encoded data is found</p>
+<div class="highlight"><pre><span></span><code>  Parameters:
+      audioBuffer: float array of bufferSize size with audio data to be decoded
+      size: size of audioBuffer
+      oxyingObject: OXY object instance, created in OXY_Create()  
+      Returns: -1 if no decoded data is found, -2 if start token is found, -3 if complete word has been decoded, positive number if character is decoded (number is the token idx)
+
+  DecodeAudioBuffer(float *audioBuffer, int size, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="get-decoded-data">Get Decoded Data<a class="headerlink" href="#get-decoded-data" title="Permanent link">&para;</a></h2>
+<p>GetDecodedData function, retrieves the last decoded data found</p>
+<div class="highlight"><pre><span></span><code>  Parameters:
+    stringDecoded: string containing decoded characters
+    oxyingObject: OXY object instance, created in OXY_Create()
+    Returns: 0 if no decoded data is available, &gt;0 if data is available and it&#39;s ok, &lt;0 if data is available but it&#39;s wrong, for the last two cases the return     value magnitude contains number of characters in string decoded
+
+  GetDecodedData(char *stringDecoded, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="get-confidence">Get Confidence<a class="headerlink" href="#get-confidence" title="Permanent link">&para;</a></h2>
+<p>Confidence function, outputs Reception Quality Measure to give confidence about the received audio. 
+  A Reception Quality value of 1.0 will mean that the reception conditions are ideal, a lower value will mean that 
+  listener is in a noisy environment, the listener should be closer to the transmitter, etc.</p>
+<div class="highlight"><pre><span></span><code>  Parameters:
+  oxyingObject: OXY object instance, created in OXY_Create()
+  Returns: confidence value from 0.0 o 1.0
+
+  GetConfidence(void *oxyingObject); //Get global confidence (combination of the other confidence values)
+  GetConfidenceError(void *oxyingObject); //Get confidence due to tokens corrected by correction algorithm
+  GetConfidenceNoise(void *oxyingObject); //Get confidence due to signal to noise ratio in received audio
+</code></pre></div>
+
+<h2 id="get-received">Get Received<a class="headerlink" href="#get-received" title="Permanent link">&para;</a></h2>
+<p>Get average received volume of last audio transmission in DB</p>
+<div class="highlight"><pre><span></span><code>  GetReceivedOxysVolume(void *oxyingObject); 
+</code></pre></div>
+
+<h2 id="get-decode-mode">Get Decode Mode<a class="headerlink" href="#get-decode-mode" title="Permanent link">&para;</a></h2>
+<p>GetDecodedMode function, outputs an integer representation of the decoded mode found from all 
+  available decoding modes, it only makes sense when decoder is configured with the ALL mode, for other modes
+  decoded mode will be always the same as the decoding mode.</p>
+<div class="highlight"><pre><span></span><code>  Parameters:
+
+  Returns: decoded mode found ( AUDIBLE = 0, NONAUDIBLE = 1, COMPRESSION = 2 )
+
+  GetDecodedMode(void *oxyingObject);
+</code></pre></div>
+
+<h2 id="base-frequency">Base Frequency<a class="headerlink" href="#base-frequency" title="Permanent link">&para;</a></h2>
+<p>Function to set custom base freq</p>
+<div class="highlight"><pre><span></span><code>  SetCustomBaseFreq(float baseFreq, int oxysSeparation, void *oxyingObject);
+</code></pre></div>
+
+<h2 id="frequency-range">Frequency Range<a class="headerlink" href="#frequency-range" title="Permanent link">&para;</a></h2>
+<p>Functions to get decoding frequency range (begin range frequency and end range frequency)</p>
+<div class="highlight"><pre><span></span><code>  GetDecodingBeginFreq(void *oxyingObject);
+  GetDecodingEndFreq(void *oxyingObject);
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+    <div class="md-footer-nav">
+        <nav class="md-footer-nav__inner md-grid">
+
+            <!-- Link to previous page -->
+            
+            <a href="../sdk-linux/" title="Pi/Linux"
+                class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                <div class="md-flex__cell md-flex__cell--shrink">
+                    <i class="md-icon md-icon--arrow-back
+                    md-footer-nav__button"></i>
+                </div>
+                <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+                    <span class="md-flex__ellipsis">
+                        <span class="md-footer-nav__direction">
+                            Previous
+                        </span>
+                        Pi/Linux
+                    </span>
+                </div>
+            </a>
+            
+
+            <!-- Link to next page -->
+            
+            <a href="../sdk-mac/" title="MacOS"
+                class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+                <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+                    <span class="md-flex__ellipsis">
+                        <span class="md-footer-nav__direction">
+                            Next
+                        </span>
+                        MacOS
+                    </span>
+                </div>
+                <div class="md-flex__cell md-flex__cell--shrink">
+                    <i class="md-icon md-icon--arrow-forward
+                    md-footer-nav__button"></i>
+                </div>
+            </a>
+            
+        </nav>
+    </div>
+    
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                                
+            </div>
+            <!-- Social links -->
+            
+        </div>
+    </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
