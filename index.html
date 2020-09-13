@@ -80,10 +80,10 @@
 
             }
             .protected__content__btn:hover {
-                background-color: #1C6D36;
+                background-color: #000;
             }
         .img-logo {
-          width: 100%;
+          width: 50%;
           height: auto;
         }
 
@@ -99,8 +99,10 @@
                 
                 <!-- insert oxy img -->
                 <img class="img-logo" src="/assets/images/deck/1.png">
-                <h1 class="protected__content__heading">Username / email address</h1>
-                <input class="protected__content__input" data-id="password" type="password" placeholder="password"/>
+                    </br>
+                    </br>
+                <h1 class="protected__content__heading">Welcome</h1>
+                <input class="protected__content__input" data-id="password" type="password" placeholder="Enter invite code"/>
                 <button data-id="button" type="button" class="protected__content__btn">Continue</button>
             </div>
         </div>
@@ -125,14 +127,14 @@
                     } else {
                         parent.location.hash = hash
                         alert[0].style.display = 'block'
-                        password[0].setAttribute('placeholder', 'Incorrect password')
+                        password[0].setAttribute('placeholder', 'Incorrect Credential')
                         password[0].value = ''
                     }
                 }
                 request.onerror = function () {
                     parent.location.hash = hash
                     alert[0].style.display = 'block'
-                    password[0].setAttribute('placeholder', 'Incorrect password')
+                    password[0].setAttribute('placeholder', 'Incorrect Credential')
                     password[0].value = ''
                 }
                 request.send()
