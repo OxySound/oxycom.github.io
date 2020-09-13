@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://oxycom.co.uk/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/how-it-works/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://oxycom.co.uk/cases/1/</loc>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-iphone/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-android/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-linux/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-mac/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-wasm/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/sdk-arm/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/components/unity/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/tutorials/iphone-hello/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/tutorials/android-hello/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://oxycom.co.uk/project/</loc>
-     <lastmod>2020-08-25</lastmod>
+     <lastmod>2020-09-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
