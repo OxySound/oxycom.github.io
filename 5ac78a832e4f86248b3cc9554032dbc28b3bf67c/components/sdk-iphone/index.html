@@ -265,8 +265,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
+  <a href="#cocoapods" class="md-nav__link">
+    CocoaPods
   </a>
   
 </li>
@@ -576,8 +576,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
+  <a href="#cocoapods" class="md-nav__link">
+    CocoaPods
   </a>
   
 </li>
@@ -660,16 +660,10 @@ DispatchQueue.main.async {
 </code></pre></div></p>
 <p>Send audio from the SDK. Type options are 0/1 or 2 this relates to should the broadcast be mixed with an external media file or not</p>
 <p>Broadcast tone with SDK configuration
-<div class="highlight"><pre><span></span><code>func sendAudio(){
-        checkDeviceVolumeLevel()
-        oxyManager!.play(&quot;829450000&quot;, withType: 0)
-    }
+<div class="highlight"><pre><span></span><code>        oxyManager!.play(&quot;829450000&quot;, withType: 0)
 </code></pre></div></p>
 <p>Audible R2D2 tone</p>
-<div class="highlight"><pre><span></span><code>func sendAudio(){
-        checkDeviceVolumeLevel()
-        oxyManager!.play(&quot;829450000&quot;, withType: 1)
-    }
+<div class="highlight"><pre><span></span><code>        oxyManager!.play(&quot;829450000&quot;, withType: 1)
 </code></pre></div>
 
 <p>External media
@@ -677,11 +671,12 @@ DispatchQueue.main.async {
 
 ...
   oxyManager!.play(&quot;929450000&quot;, withType: 2)
-        SPAlert.present(title: &quot;On device audio mixed with message&quot;, message: &quot;929450000&quot;, image: UIImage(imageLiteralResourceName: &quot;stormz&quot;))
 </code></pre></div></p>
-<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
-<p>xcode sample:</p>
-<p><a href="/assets/downloads/iOS.zip">Basic v1.31</a></p>
+<h2 id="cocoapods">CocoaPods<a class="headerlink" href="#cocoapods" title="Permanent link">&para;</a></h2>
+<p>Add the following to your pod or gitclone to download the framework</p>
+<div class="highlight"><pre><span></span><code># Demo creds
+pod &#39;OxySDK&#39;, :git =&gt; &#39;https://35c1e102b7ac4fc033394281fca3234a57782d1c@github.com/OxySound/OxySDK.git&#39;
+</code></pre></div>
                 
               
               
