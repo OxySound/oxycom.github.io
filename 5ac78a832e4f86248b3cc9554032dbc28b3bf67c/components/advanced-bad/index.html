@@ -538,9 +538,18 @@
                 
                   <h1>Error</h1>
                 
-                <p>The decoder can detect a bad decode the payload returned is
-<div class="highlight"><pre><span></span><code>    BAD
-</code></pre></div></p>
+                <p>The decoder can detect a bad decode the payload returned is Bad this can be a check or a trigger for rebroadcast</p>
+<div class="highlight"><pre><span></span><code>    func oxyId(with oxy_id: String!) {
+
+DispatchQueue.main.async {
+
+        if (payload == &quot;BAD&quot;){
+            //do something
+        }
+
+    }
+}
+</code></pre></div>
                 
               
               
