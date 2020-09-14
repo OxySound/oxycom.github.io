@@ -607,7 +607,7 @@
 func sendData(data: Data) {
     let iv: Array&lt;UInt8&gt; = self.generateIv()
     let encrypted = Data(try! AES(key: self.key, blockMode: CTR(iv: iv), padding: .noPadding).encrypt(data.bytes))
-    if let error = chirp.send(encrypted) {
+    if let error = oxyManager!.play(encrypted, withType: 0) {
         print(error.localizedDescription)
     }
 }
