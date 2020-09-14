@@ -513,6 +513,44 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Downloads
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Downloads" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Downloads
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/pack/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../vis/" title="Spectrum Analyser" class="md-nav__link">
       Spectrum Analyser
@@ -539,11 +577,20 @@
                   <h1>Custom Frequency</h1>
                 
                 <p>Preselected frequencies and tone seperations (100Hz - 22000Hz, 1 - 20)</p>
-<div class="highlight"><pre><span></span><code>    func custom(freq: Float, sep: Int) {
-        oxyManager!.setCustomBaseFreq(freq, withSeparation: Int32(sep))
-        oxyManager!.configure(oxyManager, with: CUSTOM)
-        self.oxyManager!.listen()
-    }
+<div class="highlight"><pre><span></span><code>    <span class="kd">func</span> <span class="nf">custom</span><span class="p">(</span><span class="n">freq</span><span class="p">:</span> <span class="nb">Float</span><span class="p">,</span> <span class="n">sep</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">oxyManager</span><span class="p">!.</span><span class="n">setCustomBaseFreq</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">withSeparation</span><span class="p">:</span> <span class="nb">Int32</span><span class="p">(</span><span class="n">sep</span><span class="p">))</span>
+        <span class="n">oxyManager</span><span class="p">!.</span><span class="n">configure</span><span class="p">(</span><span class="n">oxyManager</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">CUSTOM</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">oxyManager</span><span class="p">!.</span><span class="n">listen</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<div class="admonition defaults">
+<p class="admonition-title">Defaults</p>
+<p>Based on 44100.0f sample rate adjustments will be needed for other rates.</p>
+</div>
+<div class="highlight"><pre><span></span><code>  <span class="n">Default</span> <span class="n">Freq</span> <span class="mf">12000.</span><span class="n">f</span><span class="p">;</span>
+  <span class="n">Separation</span> <span class="n">Tone</span> <span class="mi">1</span>
+  <span class="n">Freq</span> <span class="n">offset</span> <span class="o">=</span> <span class="mf">64.5996106228</span><span class="n">f</span><span class="p">;</span>
 </code></pre></div>
                 
               

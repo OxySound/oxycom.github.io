@@ -570,6 +570,44 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Downloads
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Downloads" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon"></span>
+        Downloads
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project/pack/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item">
     <a href="../../vis/" title="Spectrum Analyser" class="md-nav__link">
       Spectrum Analyser
@@ -660,34 +698,34 @@ Go to the Project Settings, under the General tab, and add Oxy.framework to "Lin
 <p>Inside the bridging header, import the Oxy framework. This will make it available throughout your project’s Swift files.</p>
 <h2 id="now-for-the-code">Now for the code...<a class="headerlink" href="#now-for-the-code" title="Permanent link">&para;</a></h2>
 <p>Include the SDK and its associated configuration header:</p>
-<div class="highlight"><pre><span></span><code>import Oxy
+<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">Oxy</span>
 </code></pre></div>
 
 <p>And instantiate the SDK </p>
 <p>(A key will required in the future)</p>
-<div class="highlight"><pre><span></span><code>let OxyManager = Oxy.instance()
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">OxyManager</span> <span class="p">=</span> <span class="n">Oxy</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
 
-oxyManager?.delegate=self
+<span class="n">oxyManager</span><span class="p">?.</span><span class="n">delegate</span><span class="p">=</span><span class="kc">self</span>
 </code></pre></div>
 
 <h1 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>To receive this data on a second device, simply implement the delegate.</p>
-<div class="highlight"><pre><span></span><code>class ViewController: UIViewController, oxyDelegate  {
-}
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">oxyDelegate</span>  <span class="p">{</span>
+<span class="p">}</span>
 
 
-func oxyId(with oxy_id: String!) {
+<span class="kd">func</span> <span class="nf">oxyId</span><span class="p">(</span><span class="n">with</span> <span class="n">oxy_id</span><span class="p">:</span> <span class="nb">String</span><span class="p">!)</span> <span class="p">{</span>
 
-DispatchQueue.main.async {
+<span class="n">DispatchQueue</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">async</span> <span class="p">{</span>
 
-        //Do some magic
+        <span class="c1">//Do some magic</span>
 
-    }
-}
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Start</p>
-<div class="highlight"><pre><span></span><code>oxyManager!.listen()
+<div class="highlight"><pre><span></span><code><span class="n">oxyManager</span><span class="p">!.</span><span class="n">listen</span><span class="p">()</span>
 </code></pre></div>
 
 <p>You are now ready to start using OxySound in your own application.</p>
