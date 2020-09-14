@@ -576,12 +576,16 @@
                 
                   <h1>Custom Frequency</h1>
                 
-                <p>Preselected frequencies and tone seperations (100Hz - 22000Hz, 1 - 20)</p>
+                <p>Preselected frequencies and tone seperations (22000Hz, 1 - 20)</p>
 <div class="highlight"><pre><span></span><code>    <span class="kd">func</span> <span class="nf">custom</span><span class="p">(</span><span class="n">freq</span><span class="p">:</span> <span class="nb">Float</span><span class="p">,</span> <span class="n">sep</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">oxyManager</span><span class="p">!.</span><span class="n">setCustomBaseFreq</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">withSeparation</span><span class="p">:</span> <span class="nb">Int32</span><span class="p">(</span><span class="n">sep</span><span class="p">))</span>
         <span class="n">oxyManager</span><span class="p">!.</span><span class="n">configure</span><span class="p">(</span><span class="n">oxyManager</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">CUSTOM</span><span class="p">)</span>
         <span class="kc">self</span><span class="p">.</span><span class="n">oxyManager</span><span class="p">!.</span><span class="n">listen</span><span class="p">()</span>
     <span class="p">}</span>
+</code></pre></div>
+
+<p>Example of 10000Hz and seperation of 2:</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">custom</span><span class="p">(</span><span class="mf">10000.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="admonition defaults">
