@@ -185,6 +185,32 @@ input {
   -ms-transform: translate3d(0px, -1px, 0px);
   transform: translate3d(0px, -1px, 0px);
 }
+.protected {
+                background: #fff;
+                -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+                border-radius: 3px;
+                min-width: 500px;
+
+            }
+            .protected__content {
+                padding: 24px 28px;
+            }
+            .protected__content__heading {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0 0 12px;
+                line-height: 1;
+            }
+            .protected__alert {
+                display: none;
+                border-bottom: 1px solid transparent;
+                border-radius: 3px 3px 0 0;
+                padding: 12px 14px;
+                color: #a94442;
+                background-color: #f2dede;
+                border-color: #ebccd1;
+            }
 
 
 </style>
@@ -193,7 +219,7 @@ input {
         <div class="protected">
             <div class="protected__alert" data-id="alert">Invite code invalid</div>
             <div class="protected__content">
-                
+                <div class="login-form">
                 <div class="photo">
                 <img class="img-logo" src="/assets/images/deck/1.png">
                 </div>
@@ -213,7 +239,7 @@ input {
                 <button data-id="button" type="button" class="protected__content__btn">Start building</button>
             </div>
         </div>
-
+        </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
         <script type="text/javascript">
             "use strict"
