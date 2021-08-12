@@ -1,0 +1,536 @@
+<style>
+
+
+body {
+  background: #f4f5f6;
+  font-size: 18px;
+}
+
+.el {
+  background: #f1f3f4;
+}
+.el_r {
+  border-radius: 30px;
+}
+.el_2 {
+  background: #e3e7e8;
+}
+.el_3 {
+  background: #c7cfd1;
+}
+.el_4 {
+  background: #2f82b3;
+}
+
+.content {
+  max-width: 100%;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid #f1f3f4;
+}
+header .logo {
+  display: inline-block;
+  margin: 35px 30px 35px 4%;
+  vertical-align: middle;
+  height: 40px;
+  width: 250px;
+}
+header .search {
+  background: transparent;
+  border: 1px solid #e3e7e8;
+  display: inline-block;
+  margin: 40px 2% 30px 0;
+  height: 30px;
+  width: 200px;
+  max-width: calc(90% - 30px);
+}
+header .icon {
+  display: inline-block;
+  margin: 40px 4% 30px 0;
+  height: 30px;
+  width: 30px;
+}
+
+#crumbs {
+  background: #f7f8f8;
+  height: 24px;
+}
+
+#hero {
+  background: #ebeeef;
+  height: 500px;
+}
+
+#details {
+  background: white;
+  margin-bottom: 12px;
+  margin-top: -156px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+}
+#details #book_fpo {
+  visibility: hidden;
+  margin: auto;
+}
+#details #book.lock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  z-index: 1000;
+}
+#details #book.lock #book_content {
+  border-bottom: none;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.2s ease-out 0.1s;
+  transition: -webkit-transform 0.2s ease-out 0.1s;
+  transition: transform 0.2s ease-out 0.1s;
+  transition: transform 0.2s ease-out 0.1s, -webkit-transform 0.2s ease-out 0.1s;
+}
+#details #book.lock.slide .n {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-animation: slideIn 0.2s backwards;
+          animation: slideIn 0.2s backwards;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+#details #book.lock.slide .n:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+#details #book.lock.slide .n:nth-child(2) {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+#details #book.lock.slide .n:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+#details #book.lock.slide .n:nth-child(4) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+#details #book.lock.slide .n:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#details #book #book_content {
+  background: rgba(255, 255, 255, 0.85);
+  padding-bottom: 18px;
+  padding-top: 18px;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+#details #book #book_content .n {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+#details #book .label {
+  vertical-align: middle;
+  display: inline-block;
+  height: 18px;
+  width: 200px;
+  margin-right: 18px;
+  opacity: 0.5;
+}
+#details #book .opt {
+  vertical-align: middle;
+  display: inline-block;
+  height: 42px;
+  width: 100px;
+  margin-right: 15px;
+}
+#details #book .opt_o {
+  background: transparent;
+  border: 1.5px solid #2f82b3;
+  margin-right: 0;
+}
+#details #sep {
+  background: #f1f3f4;
+  height: 10px;
+}
+#details .top {
+  border-bottom: 1px solid #f1f3f4;
+  padding-top: 60px;
+}
+#details .bot {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+#details .title {
+  display: inline-block;
+  margin-bottom: 18px;
+  height: 36px;
+  width: 50%;
+}
+#details .addy {
+  display: inline-block;
+  margin-bottom: 6px;
+  height: 18px;
+  width: 30%;
+  opacity: 0.5;
+}
+#details .addy_2 {
+  margin-bottom: 24px;
+  height: 18px;
+  width: 25%;
+}
+#details .gps {
+  display: inline-block;
+  margin-bottom: 36px;
+  height: 12px;
+  width: 12%;
+  opacity: 0.5;
+}
+#details .phone {
+  display: inline-block;
+  margin-bottom: 36px;
+  height: 24px;
+  width: 20%;
+  opacity: 0.5;
+}
+#details .hours {
+  display: inline-block;
+  height: 18px;
+  width: 30%;
+  opacity: 0.5;
+}
+#details .map {
+  position: relative;
+  height: 350px;
+  width: 100%;
+}
+#details .map i {
+  color: #9dabaf;
+  font-size: 42px;
+  position: absolute;
+  left: 60%;
+  top: 35%;
+}
+
+.subsec {
+  background: white;
+  margin-bottom: 12px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+}
+.subsec_content {
+  padding: 18px 45px;
+}
+.subsec_sb {
+  background: transparent;
+  box-shadow: none;
+}
+.subsec_sb .subsec_content {
+  padding: 18px 15px;
+}
+.subsec.last {
+  margin-bottom: 90px;
+}
+
+.btext {
+  margin-bottom: 18px;
+  height: 9px;
+  width: 100%;
+}
+.btext_1 {
+  width: 70%;
+}
+.btext_2 {
+  width: 30%;
+}
+
+footer {
+  background: #e3e7e8;
+  height: 350px;
+}
+
+.mobile-warn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  html,
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .mobile-warn {
+    color: #000;
+    display: block;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+  }
+  .mobile-warn i {
+    font-size: 42px;
+  }
+}
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.cbx {
+  display: inline-block;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label {
+  font-size: 16px;
+  font-weight: normal;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #2f82b3;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+
+</style>
+
+
+
+
+<div class="mobile-warn text-center">
+  <div class="content">
+    <i class="icon ion-md-hand"></i>
+    <h3>OxySound is not optimized for mobile devices.</h3>
+    <p>Please view on desktop.</p>
+  </div>
+</div>
+<header class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="el el_2 el_r logo content"></div>
+      <div class="cbx">
+    <input type="checkbox" id="animateCbx" />
+    <label for="animateCbx">Animate buttons?</label>
+      </div>
+    </div>
+    <div class="col-xs-6 text-right">
+      <div class="content">
+        <div class="el el_1 el_r search"></div>
+        <div class="el el_2 el_r icon"></div>
+      </div>
+    </div>
+  </div>
+  <div id="crumbs" class="row"></div>
+</header>
+
+<section id="hero" class="container-fluid"></section>
+
+<section id="details" class="container text-center">
+  <div id="book" class="row text-center">
+    <div id="book_content">
+      <div class="el el_4 el_r label n"></div>
+      <div class="el el_4 el_r opt n"></div>
+      <div class="el el_4 el_r opt n"></div>
+      <div class="el el_4 el_r opt n"></div>
+      <div class="el el_4 el_r opt opt_o n"></div>
+    </div>
+  </div>
+  <div id="sep" class="row"></div>
+  <div id="book_fpo" class="row text-center"></div>
+  <div class="row top">
+    <div class="col-xs-12">
+      <div class="el el_2 title"></div><br/>
+      <div class="el el_2 addy"></div><br/>
+      <div class="el el_2 addy addy_2"></div><br/>
+      <div class="el el_2 gps"></div><br/>
+      <div class="el el_3 phone"></div><br/>
+    </div>
+  </div>
+  <div class="row bot">
+    <div class="col-xs-12">
+      <div class="el el_2 hours"></div><br/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 el el_2 map">
+      <i class="icon ion-ios-pin"></i>
+    </div>
+  </div>
+</section>
+
+<section id="main" class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8">
+      <div class="row">
+        <div class="col-xs-12 subsec">
+          <div class="subsec_content">
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext btext_1"></div>
+          </div>
+          <div class="subsec_content">
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext btext_2"></div>
+          </div>
+        </div>
+        <div class="col-xs-12 subsec last">
+          <div class="subsec_content">
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext btext_1"></div>
+          </div>
+          <div class="subsec_content">
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext"></div>
+            <div class="el el_1 btext btext_2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 subsec subsec_sb">
+      <div class="subsec_content">
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext btext_1"></div>
+          </div>
+      <div class="subsec_content">
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext"></div>
+            <div class="el el_2 btext btext_2"></div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<footer class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+    </div>
+</footer>
+
+
+<script>
+
+function sticky_book() {
+  var window_scrollTop = $(window).scrollTop();
+  var trigger = $("#details").offset().top;
+  var stickyH = $("#book").outerHeight(true);
+  $("#book_fpo").css("height", stickyH);
+  if (window_scrollTop > (trigger + stickyH)) {
+    $("#book").addClass("lock");
+    $("#book_fpo").show();
+  } else {
+    $("#book").removeClass("lock");
+    $("#book_fpo").hide();
+  }
+  if($('#animateCbx').is(':checked')) {
+    $("#book").addClass("slide");
+  } else {
+    $("#book").removeClass("slide");
+  }
+}
+
+$(function() {
+  $(window).scroll(sticky_book);
+  sticky_book();
+});
+</script>
